@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>登录/注册</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link href="./css/uikit.min.css" rel="stylesheet" />
+        <link href="./css/style.css" rel="stylesheet" />
+        <script src="./js/uikit.min.js" type="text/javascript"></script>
+        <script src="./js/uikit-icons.min.js" type="text/javascript"></script>
+        <script src="./js/vue-3.3.4.js" type="text/javascript"></script>
+        <script src="./js/script.js" type="text/javascript"></script>
+		<style type="text/css">
+			.uk-navbar-sticky {
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.09) !important;
+			}
+		</style>
+	</head>
+	<body class="uk-background-muted">
+		<div uk-height-viewport class="uk-section uk-section-small uk-flex uk-flex-middle uk-text-center" style="min-height: calc((100vh - 80px) - 0px);">
+            <div class="uk-width-1-1">
+                <div class="uk-container" style="max-width: 330px;">
+                    <p><svg width="90" height="83" viewBox="0 0 168 155" xmlns="http://www.w3.org/2000/svg" style="color: rgb(30,135,240);" class=" uk-svg" data-svg="/skin/ukv3/images/uikit-logo-large.svg">
+                      <path fill="#fff" d="M117.4 33.3L93.3 47.9l27.8 15.8v41.5L83.8 126l-36.7-20.8V73L23 60.7v58.9l59.9 35.2 62.1-35.2V49.2l-27.6-15.9zM106.2 27.5L82.9 14 58.6 29.1l23.6 13z"></path>
+                    </svg></p>
+                    <p class="uk-text-lead">登录</p>
+                    <form>
+                        <div class="uk-margin">
+                            <div class="uk-inline uk-width-1-1">
+                                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                <input class="uk-input" type="text" placeholder="电子邮箱">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <div class="uk-inline uk-width-1-1">
+                                <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                                <input class="uk-input" type="password" placeholder="密码">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <div class="uk-inline">
+                                <label><input class="uk-checkbox" type="checkbox"> 记住登录状态</label>
+                            </div>
+                        </div>
+                        <button class="uk-button uk-button-primary uk-width-1-1">登录</button>
+                        <p class="uk-margin-medium-top	"><a href="http://www.getuikit.net/">UIkit中文网</a> &copy; 2017-2020</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+	</body>
+</html>
