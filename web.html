@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Title</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/css/uikit.min.css" />
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>
+    </head>
+    <body>
+		<div class="uk-light" uk-sticky="cls-inactive:uk-light;cls-active:uk-background-default uk-dark;">
+			<div class="uk-container">
+				<nav uk-navbar>
+					<div class="uk-navbar-left">
+						<a class="uk-navbar-item uk-logo" href="/">github</a>
+						<ul class="uk-navbar-nav">
+							<li class="uk-active"><a href="#">首页</a></li>
+							<li><a href="">关于</a></li>
+							<li><a href="">日志</a></li>
+							<li><a href="">作品</a></li>
+							<li><a href="">联系</a></li>
+						</ul>
+					</div>
+					<div class="uk-navbar-right">
+						<a class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon href="#"></a>
+						<div class="uk-navbar-dropdown">
+							<ul class="uk-nav uk-navbar-dropdown-nav">
+								<li class="uk-active"><a href="#">Active</a></li>
+								<li><a href="#">Item</a></li>
+								<li><a href="#">Item</a></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<div class="js-slideshow-animation" uk-slideshow="autoplay:true; pause-on-hover:true; finite:true; ratio:false; draggable:true;" style="margin-top:-80px" id="slideshow">
+			<ul class="uk-slideshow-items uk-height-viewport" >
+				<li>
+					<div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+						<img src="https://xuqingkai.github.io/uikit3/images/photo.jpg" alt="" uk-cover>
+					</div>
+					<div class="uk-position-center uk-position-medium uk-text-center">
+						<h1 class="uk-heading-xlarge" uk-slideshow-parallax="x:200,-200; rotate:-180,180;">Heading0000</h1>
+						<p class="uk-h1" uk-slideshow-parallax="x: 400,-400">Lorem ipsum dolor sit amet.</p>
+					</div>
+				</li>
+				<li>
+					 <video src="https://yootheme.com/site/images/media/yootheme-pro.mp4" autoplay loop muted playsinline uk-cover></video>
+					<div class="uk-position-center uk-position-medium uk-text-center">
+						<h1 class="uk-heading-xlarge" uk-slideshow-parallax="x: 200,-200">Heading</h1>
+						<p class="uk-h1" uk-slideshow-parallax="x: 400,-400">Lorem ipsum dolor sit amet.</p>
+					</div>
+				</li>
+				<li>
+					<div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+						<img src="https://xuqingkai.github.io/uikit3/images/light.jpg" alt="" uk-cover>
+					</div>
+					<div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+						<h3 class="uk-margin-remove">Bottom</h3>
+						<p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					</div>
+				</li>
+				<li>
+					<img src="https://xuqingkai.github.io/uikit3/images/photo2.jpg" alt="" uk-cover>
+					<div class="uk-position-center uk-position-medium uk-text-center">
+						<h1 class="uk-heading-xlarge" uk-slideshow-parallax="x: 800,-800">Heading</h1>
+						<p class="uk-h1" uk-slideshow-parallax="x: 800,-800">Lorem ipsum dolor sit amet.</p>
+					</div>
+				</li>
+			</ul>
+
+			
+
+			<div class="uk-position-center-right uk-position-medium">
+				<ul class="uk-slideshow-nav uk-dotnav uk-dotnav-vertical uk-flex-center uk-margin"></ul>
+			</div>
+        </div>
+		<div id="js-scroll-trigger" href="#my-id" uk-scroll></div>
+		<script>
+		
+		var slideshow = UIkit.slideshow('#slideshow');//index prevIndex percent getIndex() maxIndex
+		for(var i in slideshow){
+			//window.alert(i + ':' + slideshow[i]);
+		}
+		document.getElementById('slideshow').onmousewheel=function (event) {
+			event = event || window.event;
+			var direction = event.wheelDelta && (event.wheelDelta > 0 ? -1 : 1);
+			if((direction<0 && slideshow.index>0) || (direction>0 && slideshow.index<slideshow.length-1)){
+				event.preventDefault();
+				if(direction<0){UIkit.scroll('#js-scroll-trigger').scrollTo('body');}
+				slideshow.show((slideshow.index + direction) % slideshow.length);
+			}
+
+			
+		};
+
+		
+		</script>
+		
+		
+		<div class="uk-child-width-1-2@m uk-grid-match" uk-grid>
+			<div>
+				<div class="uk-card uk-card-default uk-card-body" uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
+					<h3 class="uk-card-title">Left</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</div>
+			</div>
+			<div>
+				<div class="uk-card uk-card-default uk-card-body" uk-scrollspy="cls: uk-animation-slide-right; repeat: true">
+					<h3 class="uk-card-title" onclick="ss()">Right</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</div>
+			</div>
+		</div>
+
+		
+
+
+    </body>
+</html>
+
