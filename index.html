@@ -14,7 +14,6 @@
 		<hr class="uk-divider-icon">
 		<div id="file" class="uk-grid-small" uk-grid></div>
 	</div>
-
 	<script type="text/javascript">
 		function cb(response) {
 			var parents='';
@@ -24,7 +23,7 @@
 				if(list[i].type=='file' && list[i].name.substr(list[i].name.lastIndexOf('.') + 1)=='html'){
 					if(list[i].name.substr(0,5)=='demo_'){
 						UIkit.util.$('#demo').prepend(UIkit.util.$('<div><a href="'+list[i].path+'">'+list[i].name+'</a></div>'));
-					}else{
+					}else if(list[i].name != 'index.html'){
 						UIkit.util.$('#file').append(UIkit.util.$('<div><a href="'+list[i].path+'">'+list[i].name+'</a></div>'));
 					}
 				}
@@ -35,94 +34,5 @@
 		script.src='https://api.github.com/repos/'+window.location.host.substr(0, window.location.host.indexOf('.'))+window.location.pathname+'contents/'+window.location.search.replace('?','')+'?callback=cb';
 		document.getElementsByTagName('head')[0].appendChild(script);
 	</script>
-	
-	
-	<div class="uk-padding" style="line-height:40px;">
-        <a href="./form-plus.html">form-plus.html</a>，
-	<a href="./web.html">web.html</a>，
-	<a href="./page.html">page.html</a>，
-        <a href="./admin.html">admin.html</a>，
-        <a href="./blog.html">blog.html</a>，
-        <a href="./card.html">card.html</a>，
-        <a href="./cart.html">cart.html</a>，
-        <a href="./login.html">login.html</a>，
-        <a href="./price.html">price.html</a>，
-        <a href="./home.html">home.html</a>，
-		
-        <a href="./heading.html">heading.html</a>，
-        <a href="./drop.html">drop.html</a>，
-        <a href="./modal.html">modal.html</a>，
-        <a href="./slideshow.html">slideshow.html</a>，
-        <a href="./sticky.html">sticky.html</a>，
-        <a href="./sortable.html">sortable.html</a>，
-        <a href="./navbar.html">navbar.html</a>，
-        <a href="./leader.html">leader.html</a>，
-        <a href="./form.html">form.html</a>，
-        <a href="./scroll.html">scroll.html</a>，
-        <a href="./sticky-parallax.html">sticky-parallax.html</a>，
-        <a href="./slidenav.html">slidenav.html</a>，
-        <a href="./totop.html">totop.html</a>，
-        <a href="./link.html">link.html</a>，
-        <a href="./tooltip.html">tooltip.html</a>，
-        <a href="./height-expand.html">height-expand.html</a>，
-        <a href="./svg.html">svg.html</a>，
-        <a href="./dotnav.html">dotnav.html</a>，
-        <a href="./height.html">height.html</a>，
-        <a href="./search.html">search.html</a>，
-        <a href="./comment.html">comment.html</a>，
-        <a href="./width.html">width.html</a>，
-        <a href="./dropdown.html">dropdown.html</a>，
-        <a href="./dropnav.html">dropnav.html</a>，
-        <a href="./padding.html">padding.html</a>，
-        <a href="./overlay.html">overlay.html</a>，
-        <a href="./pagination.html">pagination.html</a>，
-        <a href="./spinner.html">spinner.html</a>，
-        <a href="./text.html">text.html</a>，
-        <a href="./grid-parallax.html">grid-parallax.html</a>，
-        <a href="./close.html">close.html</a>，
-        <a href="./placeholder.html">placeholder.html</a>，
-        <a href="./visibility.html">visibility.html</a>，
-        <a href="./progress.html">progress.html</a>，
-        <a href="./marker.html">marker.html</a>，
-        <a href="./position.html">position.html</a>，
-        <a href="./grid-masonry.html">grid-masonry.html</a>，
-        <a href="./description-list.html">description-list.html</a>，
-        <a href="./transition.html">transition.html</a>，
-        <a href="./scrollspy.html">scrollspy.html</a>，
-        <a href="./section.html">section.html</a>，
-        <a href="./notification.html">notification.html</a>，
-        <a href="./toggle.html">toggle.html</a>，
-        <a href="./thumbnav.html">thumbnav.html</a>，
-        <a href="./offcanvas.html">offcanvas.html</a>，
-        <a href="./switcher.html">switcher.html</a>，
-        <a href="./list.html">list.html</a>，
-        <a href="./tile.html">tile.html</a>，
-        <a href="./lightbox.html">lightbox.html</a>，
-        <a href="./iconnav.html">iconnav.html</a>，
-        <a href="./subnav.html">subnav.html</a>，
-        <a href="./table.html">table.html</a>，
-        <a href="./nav.html">nav.html</a>，
-        <a href="./tab.html">tab.html</a>，
-        <a href="./filter.html">filter.html</a>，
-        <a href="./sticky-navbar.html">sticky-navbar.html</a>，
-        <a href="./icon.html">icon.html</a>，
-        <a href="./grid.html">grid.html</a>，
-        <a href="./column.html">column.html</a>，
-        <a href="./cover.html">cover.html</a>，
-        <a href="./image.html">image.html</a>，
-        <a href="./utility.html">utility.html</a>，
-        <a href="./upload.html">upload.html</a>，
-        <a href="./video.html">video.html</a>，
-        <a href="./slider.html">slider.html</a>，
-        <a href="./parallax.html">parallax.html</a>，
-        <a href="./margin.html">margin.html</a>，
-        <a href="./container.html">container.html</a>，
-        <a href="./flex.html">flex.html</a>，
-        <a href="./height-viewport.html">height-viewport.html</a>，
-        <a href="./countdown.html">countdown.html</a>，
-        <a href="./dropbar.html">dropbar.html</a>，
-        <a href="./divider.html">divider.html</a>，
-        <a href="./label.html">label.html</a>
-	</div>
 </body>
 </html>
