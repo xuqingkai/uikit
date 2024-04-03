@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Title</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/css/uikit.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>
+	<title>Title</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/css/uikit.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>
 </head>
 <body>
-	<div id="mgs"><div>
-		<script>
-			const {$, $$} = UIkit.util;
-			var s=$('div');
-			for(var i in s){
-				document.getElementById('mgs').innerHTML+=i + ':' + s[i] + '<br />';
-			}
-		</script>
+	<div id="element"><div>
+	<div id="test">
+		<button class="uk-button uk-button-default" onc>UIkit.util.$</button>
+	<div>	
+	<div id="result"><div>
+	<script>
+		UIkit.util.$('#test button').click(function(){
+			alert(this);
+		});
+		
+		var obj =  UIkit.util.$('#element');
+		for(var i in obj){
+			document.getElementById('result').innerHTML += i + ':' + obj[i] + '<br />';
+		}
+	</script>
     </body>
 </html>
