@@ -21,10 +21,11 @@
 			var list = response.data;
 			for(var i in list){
 				if(list[i].type=='file' && list[i].name.substr(list[i].name.lastIndexOf('.') + 1)=='html'){
+					var element=UIkit.util.$('<div><a href="'+list[i].path+'">'+list[i].name+'</a></div>');
 					if(list[i].name.substr(0,5)=='demo_'){
-						UIkit.util.$('#demo').append(UIkit.util.$('<div><a href="'+list[i].path+'">'+list[i].name+'</a></div>'));
+						UIkit.util.$('#demo').append(element);
 					}else if(list[i].name != 'index.html'){
-						UIkit.util.$('#file').append(UIkit.util.$('<div><a href="'+list[i].path+'">'+list[i].name+'</a></div>'));
+						UIkit.util.$('#file').append(element);
 					}
 				}
 			}
