@@ -9,29 +9,32 @@
 	<script src="./js/uikit-icons.js"></script>
 </head>
 <body>
-<ul id="demo" class="uk-grid-small uk-margin" uk-grid></ul>
-<hr class="uk-divider-icon">
-<ul id="file" class="uk-grid-small uk-margin" uk-grid></ul>
-<script type="text/javascript">
-	function cb(response) {
-		var parents='';
-		var meta = response.meta;
-		var list = response.data;
-		for(var i in list){
-			if(list[i].type=='file' && list[i].name.substr(list[i].name.lastIndexOf('.') + 1)=='html'){
-				if(list[i].name.substr(0,5)=='demo_'){
-					UIkit.util.$('#demo').prepend(UIkit.util.$('<li><a href="'+list[i].path+'">'+list[i].name+'</a></li>'));
-				}else{
-					UIkit.util.$('#file').append(UIkit.util.$('<li><a href="'+list[i].path+'">'+list[i].name+'</a></li>'));
+	<div class="uk-padding">
+		<div id="demo" class="uk-grid-smalln" uk-grid></div>
+		<hr class="uk-divider-icon">
+		<div id="file" class="uk-grid-small" uk-grid></div>
+	</div>
+
+	<script type="text/javascript">
+		function cb(response) {
+			var parents='';
+			var meta = response.meta;
+			var list = response.data;
+			for(var i in list){
+				if(list[i].type=='file' && list[i].name.substr(list[i].name.lastIndexOf('.') + 1)=='html'){
+					if(list[i].name.substr(0,5)=='demo_'){
+						UIkit.util.$('#demo').prepend(UIkit.util.$('<div><a href="'+list[i].path+'">'+list[i].name+'</a></div>'));
+					}else{
+						UIkit.util.$('#file').append(UIkit.util.$('<div><a href="'+list[i].path+'">'+list[i].name+'</a></div>'));
+					}
 				}
 			}
 		}
-	}
-	
-	var script = document.createElement('script');
-	script.src='https://api.github.com/repos/'+window.location.host.substr(0, window.location.host.indexOf('.'))+window.location.pathname+'contents/'+window.location.search.replace('?','')+'?callback=cb';
-	document.getElementsByTagName('head')[0].appendChild(script);
-</script>
+		
+		var script = document.createElement('script');
+		script.src='https://api.github.com/repos/'+window.location.host.substr(0, window.location.host.indexOf('.'))+window.location.pathname+'contents/'+window.location.search.replace('?','')+'?callback=cb';
+		document.getElementsByTagName('head')[0].appendChild(script);
+	</script>
 	
 	
 	<div class="uk-padding" style="line-height:40px;">
