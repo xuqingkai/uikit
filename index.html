@@ -9,6 +9,7 @@
 	<script src="./js/uikit-icons.js"></script>
 </head>
 <body>
+<ul id="demo" class="uk-grid-small uk-margin" uk-grid></ul>
 <ul id="file" class="uk-grid-small uk-margin" uk-grid></ul>
 <script type="text/javascript">
 	function cb(response) {
@@ -18,7 +19,7 @@
 		for(var i in list){
 			if(list[i].type=='file' && list[i].name.substr(list[i].name.lastIndexOf('.') + 1)=='html'){
 				if(list[i].name.substr(0,5)=='demo_'){
-					UIkit.util.$('#file').prepend(UIkit.util.$('<li><a href="'+list[i].path+'">'+list[i].name+'</a></li>'));
+					UIkit.util.$('#demo').prepend(UIkit.util.$('<li><a href="'+list[i].path+'">'+list[i].name+'</a></li>'));
 				}else{
 					UIkit.util.$('#file').append(UIkit.util.$('<li><a href="'+list[i].path+'">'+list[i].name+'</a></li>'));
 				}
