@@ -17,9 +17,8 @@
 		var list = response.data;
 		for(var i in list){
 			if(list[i].type=='file' &&list[i].name.substr(list[i].name.lastIndexOf('.') + 1)=='html'){
-				$('#file').append('<a href="'+list[i].path+'">'+list[i].name+'</a>');
+				UIkit.util.$('#file').append('<a href="'+list[i].path+'">'+list[i].name+'</a>');
 			}
-		
 		}
 	}
 	
