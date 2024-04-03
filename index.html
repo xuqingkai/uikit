@@ -16,8 +16,13 @@
 		var meta = response.meta;
 		var list = response.data;
 		for(var i in list){
-			if(list[i].type=='file' &&list[i].name.substr(list[i].name.lastIndexOf('.') + 1)=='html'){
-				UIkit.util.$('#file').append(UIkit.util.$('<a href="'+list[i].path+'">'+list[i].name+'</a>'));
+			if(list[i].type=='file' && list[i].name.substr(list[i].name.lastIndexOf('.') + 1)=='html'){
+				if(list[i].name.substr(0,5)=='demo_'){
+					UIkit.util.$('#file').insertBefore(UIkit.util.$('<a href="'+list[i].path+'">'+list[i].name+'</a>'));
+				}else{
+					UIkit.util.$('#file').append(UIkit.util.$('<a href="'+list[i].path+'">'+list[i].name+'</a>'));
+				}
+				
 			}
 		}
 	}
