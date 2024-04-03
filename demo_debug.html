@@ -9,20 +9,21 @@
 	<script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>
 </head>
 <body>
-	<div id="element"><div>
-	<div id="test">
-		<a class="uk-button uk-button-default" href="">UIkit.util.$</a>
-	<div>	
-	<div id="result"><div>
+	<div class="uk-padding">
+		<div id="element"><div>
+		<div id="test" class="uk-grid-small" uk-grid>
+			<a class="uk-button uk-button-default" href="javascript:util$();">UIkit.util.$</a>
+		</div>
+		<hr class="uk-divider-icon">
+		<div id="result"><div>
+	<div>
 	<script>
-		UIkit.util.$('#test').find('a').click(function(){
-			alert('ss');
-		});
-		
-		var obj =  UIkit.util.$('#element');
-		for(var i in obj){
-			document.getElementById('result').innerHTML += i + ':' + obj[i] + '<br />';
+		function util$(){
+			var obj =  UIkit.util.$('#element');
+			for(var i in obj){
+				document.getElementById('result').innerHTML += i + ':' + obj[i] + '<br />';
+			}
 		}
 	</script>
-    </body>
+</body>
 </html>
