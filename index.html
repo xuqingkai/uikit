@@ -18,7 +18,7 @@
 		for(var i in list){
 			if(list[i].type=='file' && list[i].name.substr(list[i].name.lastIndexOf('.') + 1)=='html'){
 				if(list[i].name.substr(0,5)=='demo_'){
-					UIkit.util.$('#file').insertBefore(UIkit.util.$('<div><a href="'+list[i].path+'">'+list[i].name+'</a></div>'));
+					UIkit.util.$('#file').prepend(UIkit.util.$('<div><a href="'+list[i].path+'">'+list[i].name+'</a></div>'));
 				}else{
 					UIkit.util.$('#file').append(UIkit.util.$('<div><a href="'+list[i].path+'">'+list[i].name+'</a></div>'));
 				}
